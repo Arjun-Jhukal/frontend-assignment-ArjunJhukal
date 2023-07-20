@@ -1,0 +1,53 @@
+.product {
+  &__item {
+    border: 1px solid #f7f7f7;
+    padding: 15px;
+    background-color: $white;
+    margin-bottom: 30px;
+    @include transition(0.3s);
+
+    &:hover {
+      @include boxShadow(0.5, 1px);
+      transform: scale(1.01);
+
+      a {
+        color: $orange__color;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    a {
+      display: block;
+    }
+  }
+
+  &__info {
+    padding-top: 30px;
+    text-align: center;
+
+    h1 {
+      @include line-clamp(2);
+    }
+  }
+
+  &__price {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    span {
+      font-size: 32px;
+    }
+
+    del {
+      color: $orange__color;
+    }
+  }
+}

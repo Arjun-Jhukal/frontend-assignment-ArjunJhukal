@@ -1,8 +1,10 @@
+import Layout from "../container/Layout/Layout";
+import ProductSection from "../container/ProductSection/ProductSection";
 const LandingPage = () => {
   return (
-    <div>
-      <p>You Are at Landing Page</p>
-    </div>
+    <Layout totalItem={6}>
+      <ProductSection />
+    </Layout>
   );
 };
 

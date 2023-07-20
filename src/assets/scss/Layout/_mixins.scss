@@ -1,0 +1,13 @@
+@mixin line-clamp($number) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+}
+@mixin transition($value) {
+  transition: all $value ease-in-out;
+}
+
+@mixin boxShadow($opacity, $spread) {
+  box-shadow: 0px 0px $spread rgba(0, 0, 0, $opacity);
+}

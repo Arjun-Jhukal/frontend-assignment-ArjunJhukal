@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font__family__02;
+  background-color: #f7f7f7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-family: $font__family__01;
+  margin-bottom: 0.2em;
+}
+p {
+  color: $text__color;
+}
+
+a {
+  display: inline-block;
+  color: initial;
+  text-decoration: none;
+
+  &:hover,
+  &:visited {
+    color: inherit;
+  }
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: $border__01;
+
+  &:focus {
+    outline: none;
+  }
+}
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

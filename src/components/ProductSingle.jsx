@@ -1,8 +1,10 @@
+import Layout from "../container/Layout/Layout";
+
 const ProductSingle = () => {
   return (
-    <div>
+    <Layout totalItem={9}>
       <p>Product</p>
-    </div>
+    </Layout>
   );
 };
 

@@ -1,0 +1,15 @@
+.error__page {
+  height: 100vh;
+  text-align: center;
+  .container {
+    display: grid;
+    height: 100%;
+    place-items: center;
+  }
+
+  &__content {
+    .sm__heading {
+      color: $orange__color;
+    }
+  }
+}
