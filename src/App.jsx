@@ -3,6 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import ProductList from "./pages/ProductList";
 import ProductDetail from "./pages/ProductDetail";
 import ErrorPage from "./pages/ErrorPage";
+
 const App = () => {
   return (
     <Router>

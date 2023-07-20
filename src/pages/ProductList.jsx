@@ -1,8 +1,16 @@
+import ProductSingle from "../components/ProductSingle";
+import Layout from "../container/Layout/Layout";
 const ProductList = () => {
   return (
-    <div>
-      <p>Your are at Porduct List Page</p>
-    </div>
+    <Layout>
+      <div className="product section__gap">
+        <div className="container">
+          <div className="row">
+            <ProductSingle />
+          </div>
+        </div>
+      </div>
+    </Layout>
   );
 };
 

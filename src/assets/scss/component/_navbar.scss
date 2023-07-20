@@ -1,0 +1,122 @@
+.navbar {
+  background-color: $white;
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .search__bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    border-radius: 2px;
+    input {
+      border: none;
+
+      &:focus {
+        border-color: $orange__color;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  &__cart {
+    position: relative;
+    z-index: 1;
+
+    sup {
+      position: absolute;
+      top: -7px;
+      right: -7px;
+      background-color: $orange__color;
+      color: $white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    &__items {
+      position: fixed;
+      z-index: 10;
+      background-color: $white;
+      flex-direction: column;
+      top: 0;
+      left: 0;
+      min-width: 250px;
+      height: 100vh;
+      justify-content: flex-start;
+      padding-top: 120px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-100%);
+      @include transition(0.1s);
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+
+      li:first-child {
+        border: 1px solid $orange__color;
+      }
+    }
+    &::before {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      opacity: 0;
+      visibility: hidden;
+      @include transition(0.3s);
+    }
+    .search__bar {
+      border: none;
+      position: relative;
+      z-index: 1;
+
+      input {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 50px;
+        min-width: 250px;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        @include transition(0.3s);
+      }
+
+      &.active {
+        input {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}

@@ -12,6 +12,33 @@
   font-size: $sm__font;
 }
 
+@media (max-width: 768px) {
+  .lg__heading {
+    font-size: $md__font;
+  }
+  .md__heading {
+    font-size: $sm__font;
+  }
+  .sm__heading {
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .lg__heading {
+    font-size: 18px;
+  }
+  .md__heading {
+    font-size: 16px;
+  }
+  .sm__heading {
+    font-size: 14px;
+  }
+  span,
+  p {
+    font-size: 12px;
+  }
+}
+
 .sm__heading,
 .md__heading,
 .lg__heading,
@@ -62,5 +89,6 @@
   &::before {
     content: "RS.";
     display: inline-block;
+    margin-right: 5px;
   }
 }

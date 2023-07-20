@@ -7,7 +7,7 @@ const SectionTitle = ({ title, subTitle, btnValue }) => {
         <p>{subTitle}</p>
       </div>
       {btnValue && (
-        <Link to={"/"} className="btn btn__view">
+        <Link to={"/product"} className="btn btn__view">
           {btnValue}
         </Link>
       )}

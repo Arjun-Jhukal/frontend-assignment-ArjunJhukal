@@ -1,0 +1,10 @@
+[
+  {
+    "item": "Home",
+    "link": "/"
+  },
+  {
+    "item": "Product",
+    "link": "/product"
+  }
+]

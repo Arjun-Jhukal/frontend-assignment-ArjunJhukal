@@ -30,7 +30,7 @@
     padding-top: 30px;
     text-align: center;
 
-    h1 {
+    a {
       @include line-clamp(2);
     }
   }
@@ -43,11 +43,56 @@
     gap: 10px;
 
     span {
-      font-size: 32px;
+      font-size: 28px;
+      font-weight: 600;
     }
 
     del {
       color: $orange__color;
+    }
+  }
+
+  &__cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+    li {
+      button {
+        @extend .product__cart;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .product {
+    &__price {
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .product {
+    &__item {
+      padding: 5px;
+    }
+    &__image {
+      height: 120px;
+    }
+    &__price {
+      flex-wrap: wrap;
+
+      span {
+        font-size: 16px;
+      }
+      del {
+        font-size: 12px;
+      }
     }
   }
 }

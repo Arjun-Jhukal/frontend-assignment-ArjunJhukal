@@ -38,6 +38,7 @@ a {
 button {
   background-color: transparent;
   outline: none;
+  border: none;
 }
 
 input,
@@ -45,9 +46,9 @@ textarea,
 select {
   display: block;
   width: 100%;
-  padding: 15px;
+  padding: 8px 15px;
   border: $border__01;
-
+  border-radius: 5px;
   &:focus {
     outline: none;
   }
