@@ -6,7 +6,7 @@ import InputField from "../../components/InputField";
 import { BsSearch } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { FaShoppingCart } from "react-icons/fa";
 import MiniCart from "../../components/MiniCart";
@@ -28,8 +28,24 @@ const Navbar = ({ searchValue, handleSearchChange, handleFormSubmit, cartItem })
     setMiniCartStatus(!miniCartStatus);
   };
 
+  const [fixedNavbar, setFixedNavbar] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 150) {
+      setFixedNavbar(true);
+    } else {
+      setFixedNavbar(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
+  console.log(fixedNavbar);
+
   return (
-    <nav className="navbar">
+    <nav className={fixedNavbar ? "navbar fixed" : "navbar"}>
       <div className="container">
         <div className="navbar__logo">
           <Link to={"/"} className="lg__heading">

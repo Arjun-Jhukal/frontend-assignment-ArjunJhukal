@@ -1,6 +1,14 @@
 .navbar {
   background-color: $white;
 
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    animation: fade-in 0.2s linear;
+  }
   &__items {
     display: flex;
     align-items: center;
@@ -118,5 +126,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
