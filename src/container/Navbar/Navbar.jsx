@@ -9,6 +9,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 
 import { FaShoppingCart } from "react-icons/fa";
+import MiniCart from "../../components/MiniCart";
+
 const Navbar = ({ searchValue, handleSearchChange, handleFormSubmit, cartItem }) => {
   const [searchStatus, setSearchStatus] = useState(false);
   const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
@@ -18,6 +20,12 @@ const Navbar = ({ searchValue, handleSearchChange, handleFormSubmit, cartItem })
   };
   const handleMobileMenuChange = () => {
     setMobileMenuStatus(!mobileMenuStatus);
+  };
+
+  const [miniCartStatus, setMiniCartStatus] = useState(false);
+
+  const handleCartStatus = () => {
+    setMiniCartStatus(!miniCartStatus);
   };
 
   return (
@@ -54,9 +62,9 @@ const Navbar = ({ searchValue, handleSearchChange, handleFormSubmit, cartItem })
             </button>
           </form>
 
-          <button className="navbar__cart">
+          <button className="navbar__cart" onClick={handleCartStatus}>
             <FaShoppingCart size={24} />
-            <sup>{cartItem}</sup>
+            {cartItem.length > 0 ? <sup>{cartItem.length}</sup> : ""}
           </button>
         </div>
 
@@ -64,6 +72,8 @@ const Navbar = ({ searchValue, handleSearchChange, handleFormSubmit, cartItem })
           <RxHamburgerMenu size={32} />
         </button>
       </div>
+
+      <MiniCart miniCartStatus={miniCartStatus} onClick={handleCartStatus} />
     </nav>
   );
 };

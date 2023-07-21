@@ -1,12 +1,23 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { dataContext } from "../context/dataContext";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 const ProductSingle = () => {
-  const { matchedProduct } = useContext(dataContext);
+  const { matchedProduct, handleCartProduct } = useContext(dataContext);
 
   const calculatedPrice = (actualPrice) => {
     return actualPrice - 0.1 * actualPrice;
+  };
+
+  const handleCartClick = (index) => {
+    const data = {
+      id: matchedProduct[index],
+      title: matchedProduct[index].title,
+      image: matchedProduct[index].image,
+      price: matchedProduct[index].price,
+    };
+
+    handleCartProduct(data);
   };
 
   return (
@@ -33,7 +44,7 @@ const ProductSingle = () => {
                 </div>
                 <ul className="product__cart">
                   <li>
-                    <button type="button" className="btn btn__view">
+                    <button type="button" className="btn btn__view" onClick={() => handleCartClick(index)}>
                       <FaShoppingCart size={24} />
                       <span>Add to Cart</span>
                     </button>
