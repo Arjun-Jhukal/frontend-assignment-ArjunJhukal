@@ -17,7 +17,7 @@ In order to run this program on your local device follow the guidelines given be
 3. Now run **Yarn Dev**
 
 The Project satisfy all the basic requirement provided by the organization.
-My Idea about this project:
+My Idea about this project is:
 
 1. My primary focus was to work with what i know rather than learning anything new as there is a limited time.
 2. I have fetched only 6 item at Landing page as landing page contains few products.
